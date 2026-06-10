@@ -29,7 +29,7 @@ export default function Portada() {
       <section className="relative w-full h-[calc(110vh-160px)] md:h-screen flex flex-col items-center justify-center text-white">
   
   <img
-    src="/Portada-02.png"
+    src="/portada.jpeg"
     alt="Fondo"
     className="absolute w-full h-full object-cover"
   />

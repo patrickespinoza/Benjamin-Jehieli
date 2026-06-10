@@ -6,14 +6,14 @@ const Carousel = () => {
   
   // Lista de imágenes para el carrusel
   const images = [
-    '/carrusel01.jpeg', 
-    '/carusel02.jpeg',
-    '/carusel03.jpeg', 
-    '/carusel04.jpeg',
-    '/carusel05.jpeg',
-    
-
-
+    '/Carrusel01.jpeg', 
+    '/Carusel02.jpeg',
+    '/Carusel03.jpeg', 
+    '/Carusel04.jpeg',
+    '/Carusel05.jpeg',
+    '/Carusel06.jpeg',
+    '/Carusel07.jpeg',
+    '/Carusel08.jpeg',
   ];
 
   useEffect(() => {

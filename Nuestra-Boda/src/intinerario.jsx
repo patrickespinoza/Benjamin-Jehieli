@@ -126,7 +126,7 @@ ${mensajeInvitado || "Sin mensaje"}
   <div className="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center space-y-4 hover:scale-105 transition duration-300">
     
     <h1 className="text-2xl sm:text-3xl font-bold font-playfair tracking-wide">
-      CELEBRACIÓN
+      CEREMONI DE ACCION DE GRACIAS
     </h1>
 
     <div className="text-lg font-cursiveDancing space-y-1">
@@ -308,7 +308,7 @@ ${mensajeInvitado || "Sin mensaje"}
 
   {/* Fondo con blur */}
   <img
-    src="/finalboda.webp"
+    src="/final.png"
     alt="Fondo boda"
     className="absolute w-full h-full object-cover opacity-30 blur-sm scale-110"
   />
