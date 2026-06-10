@@ -40,7 +40,7 @@ export default function Portada() {
   <div className="relative z-10 w-full h-full justify-end pb-16 items-center flex flex-col p-4 gap-4">
     
     <h1 className="roboto-black p-12 text-4xl sm:text-4xl md:text-6xl lg:text-8xl font-cursiveDancing">
-      Allison & David
+      Bejamín & Jehieli
     </h1>
 
     <p className="font-serif text-2xl sm:text-2xl md:text-3xl lg:text-4xl">

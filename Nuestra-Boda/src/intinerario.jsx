@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Carousel from "./carrusel";
 import Countdown from "./componentes-encabezado/encabeza-cuenta";
 import { motion, AnimatePresence } from "framer-motion";
+import Novios from "./componentes-encabezado/novios-info";
 
 
 export default function Intinerario() {
@@ -38,13 +39,13 @@ export default function Intinerario() {
 
   try {
     // 🔥 GUARDAR EN GOOGLE SHEETS
-    await fetch("https://script.google.com/macros/s/AKfycbxklU9PTlqxkcu9pBUfWYhByQZ_7kJWuFENeeQhlEW-C6eh2cVbTK3z2AbMJiWVL1ME/exec", {
+    await fetch("https://script.google.com/macros/s/AKfycbybAXwN1Vd27tQTf-UfjUQMBoPWFEaS_vuHnSsR2qR-Pc1tMBxH7TrC00LwGbwh4Mnnrw/exec", {
       method: "POST",
       body: JSON.stringify(data),
     });
 
     // 📱 WHATSAPP
-    const numero = "522214105012";
+    const numero = "522381507457";
 
     const mensaje = `✨ Confirmación de asistencia ✨
 
@@ -104,7 +105,7 @@ ${mensajeInvitado || "Sin mensaje"}
 {/* COUNTDOWN separado pero integrado */}
 <div className="bg-black pb-20 flex justify-center">
   <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-8 py-6 shadow-xl">
-    <Countdown targetDate="2026-06-11T00:00:00" />
+    <Countdown targetDate="2026-10-18T00:00:00" />
   </div>
 </div>
         <div className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden">
@@ -129,20 +130,20 @@ ${mensajeInvitado || "Sin mensaje"}
     </h1>
 
     <div className="text-lg font-cursiveDancing space-y-1">
-      <p>📅 11 Junio 2026</p>
-      <p>⏰ 4:30 PM</p>
+      <p>📅 18 Octubre 2026</p>
+      <p>⏰ 1:00 PM</p>
     </div>
 
     <div className="border-t border-gray-200 pt-4 space-y-2">
       <p className="font-semibold text-lg">Ubicacion</p>
-      <p className="font-semibold text-lg">📍 Salón Event Center</p>
+      <p className="font-semibold text-lg">📍 Salón Quinta Cangrejos</p>
       <p className="text-sm text-gray-600">
-        C.5 Pte. 400, Libertad, Heroica Puebla de Zaragoza, Pue
+        C.carril libertad 81 San Vicente Ferrer, 75718, Tehuácan, Pue
       </p>
     </div>
 
     <a
-      href="https://maps.app.goo.gl/TsSDUBKAractwi8F8"
+      href="https://maps.app.goo.gl/Yi5XS1J5hugvNDMM9"
       target="_blank"
       className="inline-block mt-4 bg-[#9E8E7B] hover:bg-[#8a7a69] text-white px-6 py-3 rounded-full shadow-md transition duration-300"
     >
@@ -151,51 +152,8 @@ ${mensajeInvitado || "Sin mensaje"}
   </div>
 </div>
 
-        {/* Sección de Vestimenta */}
-        <div className="flex items-center justify-center p-6 bg-black">
-  <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-xl p-8 max-w-md w-full text-center space-y-4 text-white">
-    
-    <h1 className="text-2xl sm:text-4xl font-bold font-playfair tracking-wide">
-      Detalles
-    </h1>
-
-    <p className="text-lg sm:text-2xl font-cursiveDancing">
-      Código de vestimenta
-    </p>
-
-    {/* Línea decorativa */}
-    <div className="w-16 h-[2px] bg-[#9E8E7B] mx-auto"></div>
-
-    {/* Tipo */}
-    <p className="text-2xl sm:text-3xl font-semibold mt-2">
-      Formal
-    </p>
-
-    {/* Descripción */}
-    <p className="text-sm sm:text-base text-gray-300 mt-2">
-      Elegante y acorde a la ocasión. Evita colores demasiado claros.
-    </p>
-
-    {/* Íconos */}
-    <div className="flex justify-center gap-6 mt-4 text-3xl">
-      <span>🤵</span>
-      <span>👗</span>
-    </div>
-
-    {/* Línea decorativa */}
-    <div className="w-16 h-[2px] bg-[#9E8E7B] mx-auto"></div>
-    
-    <p className="text-lg sm:text-2xl font-cursiveDancing">
-      Evento
-    </p>
-
-    <p className="text-sm sm:text-base text-gray-300 mt-2">
-      Solo para adultos
-    </p>
-
-
-  </div>
-</div>
+{/* SECCIÓN VESTIMENTA */}
+      <Novios />
 
         {/* Sección de Momentos */}
         <div className="flex items-center justify-center py-12 bg-gray-50">
@@ -224,96 +182,126 @@ ${mensajeInvitado || "Sin mensaje"}
   </div>
 </div>
 
-        {/* Sección de Regalos */}
-  <div className="flex flex-col items-center justify-center gap-3 h-96 md:h-80 lg:h-[700px]">
-  <img className="h-24 w-24 sm:h-28 sm:w-28 p-3" src="/regalo1.png" alt="Regalo" />
-  <h1 className="text-xl sm:text-2xl font-bold p-3 font-playfair">REGALOS</h1>
-  <p className="text-lg sm:text-xl p-7 text-center ">Ya tenemos pensado el ferrari, la mansion y el velero. Ahora lo unico que nos falta es el dinero</p>
+{/* Sección Mesa de Regalos */}
+<div className="flex flex-col items-center justify-center gap-5 h-96 md:h-80 lg:h-[700px]">
 
-  {/* Botón para ver datos bancarios*/}
-  <button 
-    className="bg-[#9E8E7B] rounded-md p-3 w-96 h-14 flex items-center justify-center text-xl text-white "
+  <img
+    className="h-24 w-24 sm:h-28 sm:w-28 p-3 opacity-90"
+    src="/regalo1.png"
+    alt="Regalos"
+  />
+
+  <h1 className="text-xl sm:text-2xl font-bold font-playfair tracking-[0.25em] text-[#3f3a35]">
+    MESA DE REGALOS
+  </h1>
+
+  <p className="text-center text-base sm:text-lg px-6 max-w-2xl leading-relaxed text-[#6b6258]">
+    Su presencia es el mejor regalo para nosotros.  
+    Si desean tener un detalle adicional, hemos creado una mesa de regalos en Liverpool para acompañarnos en esta nueva etapa.
+  </p>
+
+  <button
+    className="bg-[#9E8E7B] hover:bg-[#8a7a6a] transition rounded-xl px-8 py-3 w-80 sm:w-96 text-white text-lg tracking-wider shadow-md"
     onClick={() => setMostrarModal(true)}
   >
-    Ver Datos Bancarios
+    Ver Mesa de Regalos
   </button>
-<AnimatePresence>
-  {mostraModal && (
-    <motion.div
-      className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center z-50"
-      onClick={() => setMostrarModal(false)}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
+
+  {/* MODAL */}
+  <AnimatePresence>
+    {mostraModal && (
       <motion.div
-        className="relative w-80 h-56 rounded-2xl p-5 text-white overflow-hidden shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-        initial={{ scale: 0.8, opacity: 0, y: 80 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.8, opacity: 0, y: 80 }}
-        transition={{ duration: 0.4 }}
-        style={{
-          background: "linear-gradient(135deg, #9E8E7B, #5f564c)",
-        }}
+        className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center z-50 px-4"
+        onClick={() => setMostrarModal(false)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
-        {/* ✨ Brillo animado */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-30 animate-[shine_3s_infinite]" />
-
-        {/* 🏦 Logo banco */}
-        <div className="flex justify-between items-center">
-          <h2 className="text-sm tracking-widest">SANTANDER</h2>
-          <span className="text-xs opacity-70">VISA</span>
-        </div>
-
-        {/* 💳 Chip */}
-        <div className="w-10 h-7 bg-yellow-300 rounded-md mt-4 shadow-inner"></div>
-
-        {/* 🔢 Número */}
-        <p className="text-lg tracking-[0.2em] mt-6">
-          1234 5678 9012 3456
-        </p>
-
-        {/* 👤 Nombre + fecha */}
-        <div className="flex justify-between items-end mt-4 text-xs">
-          <div>
-            <p className="opacity-70">Card Holders</p>
-            <p className="text-sm tracking-wide">JUAN PEREZ</p>
-          </div>
-          <div>
-            <p className="opacity-70">VALID THRU</p>
-            <p>06/20</p>
-          </div>
-        </div>
-
-        {/* 📋 Botón copiar */}
-        <button
-          onClick={copiarCuenta}
-          className="mt-4 w-full bg-white text-black py-1 rounded-md text-xs font-semibold hover:opacity-80 transition"
+        <motion.div
+          className="relative w-full max-w-[380px] rounded-[28px] overflow-hidden shadow-2xl border border-white/20"
+          onClick={(e) => e.stopPropagation()}
+          initial={{ scale: 0.85, opacity: 0, y: 60 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.85, opacity: 0, y: 60 }}
+          transition={{ duration: 0.4 }}
+          style={{
+            background:
+              "linear-gradient(145deg, #fbf8f3 0%, #f1ece4 50%, #e4ddd2 100%)",
+          }}
         >
-          📋 Copiar número
-        </button>
+          {/* brillo elegante */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-40 animate-[shine_5s_infinite]" />
 
-        {/* ✅ Feedback */}
-        {copiado && (
-          <p className="absolute bottom-10 left-0 right-0 text-center text-green-200 text-xs">
-            ✅ Copiado
-          </p>
-        )}
+          {/* barra dorada superior */}
+          <div className="h-1 w-full bg-gradient-to-r from-[#C6A76A] via-[#E6C98A] to-[#C6A76A]" />
 
-        {/* ❌ Cerrar */}
-        <button
-          className="absolute top-1 right-3 text-white text-lg"
-          onClick={() => setMostrarModal(false)}
-        >
-          ✕
-        </button>
+          {/* cerrar */}
+          <button
+            className="absolute top-3 right-4 text-[#6b6258] text-xl"
+            onClick={() => setMostrarModal(false)}
+          >
+            ✕
+          </button>
+
+          <div className="p-7">
+
+            {/* LOGO */}
+            <div className="flex justify-center">
+              <img
+                src="/liverpool.svg"
+                alt="Liverpool"
+                className="h-10 object-contain opacity-90"
+              />
+            </div>
+
+            {/* título */}
+            <div className="text-center mt-5">
+              <p className="text-[11px] tracking-[0.35em] text-[#8a7f72] uppercase">
+                Mesa de Regalos
+              </p>
+
+              <h2 className="text-3xl mt-2 font-playfair text-[#4b4036]">
+                Liverpool
+              </h2>
+
+              <div className="w-16 h-[1px] bg-[#C6A76A] mx-auto mt-3"></div>
+            </div>
+
+            {/* número */}
+            <div className="mt-7 text-center">
+              <p className="text-[11px] tracking-[0.3em] text-[#8a7f72] uppercase">
+                Evento
+              </p>
+
+              <p className="text-3xl tracking-[0.2em] text-[#3f3a35] font-light mt-1">
+                51983315
+              </p>
+            </div>
+
+            {/* novios */}
+            <p className="text-center text-xs tracking-[0.25em] text-[#7a6f63] mt-4">
+              VALERIA & ALEJANDRO
+            </p>
+
+            {/* botón */}
+            <button
+              onClick={() =>
+                window.open(
+                  "https://mesaderegalos.liverpool.com.mx/milistaderegalos/51983315",
+                  "_blank"
+                )
+              }
+              className="w-full mt-6 bg-[#6b5b4d] hover:bg-[#5a4c42] transition text-white py-3 rounded-xl tracking-wider shadow-md"
+            >
+              Abrir Mesa de Regalos
+            </button>
+
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
-  )}
-</AnimatePresence>
+    )}
+  </AnimatePresence>
 </div>
-
 {/* Sección de Confirmación de Asistencia */}
 
 <div className="relative w-full flex justify-center items-center py-16 bg-black overflow-hidden">
