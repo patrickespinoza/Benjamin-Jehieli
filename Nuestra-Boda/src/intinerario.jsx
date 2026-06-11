@@ -163,7 +163,7 @@ de nuestro matrimonio.
   className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden"
 >
   <img
-    src="/Carrusel01.jpeg"
+    src="/imagen1.jpeg"
     alt="Novios"
     className="w-full h-full object-cover object-[center_35%]"
   />
