@@ -422,9 +422,15 @@ de nuestro matrimonio.
         color: "#593B1F",
       }}
     >
-      Cada fotografía guarda un recuerdo,
-      una sonrisa y una historia que nos ha traído
-      hasta este día tan especial.
+      "Asi que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre."
+    </p>
+    <p
+      className="max-w-2xl mx-auto text-lg leading-relaxed mb-12"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      San Mateo 19:6
     </p>
 
     {/* Carrusel */}
