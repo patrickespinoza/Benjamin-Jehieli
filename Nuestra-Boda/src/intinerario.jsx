@@ -167,87 +167,6 @@ de nuestro matrimonio.
   </div>
 </div>
 
-{/* Frase de separacion */}
-       <div
-  className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden"
->
-  <img
-    src="./image1.jpeg"
-    alt="Novios"
-    className="w-full h-full object-cover object-[center_35%]"
-  />
-
-  {/* Oscurecimiento elegante */}
-  <div className="absolute inset-0 bg-black/10" />
-
-  {/* Fade inferior */}
-  <div
-    className="absolute bottom-0 left-0 w-full h-40"
-    style={{
-      background:
-        "linear-gradient(to top, #DDDBD7 0%, transparent 100%)",
-    }}
-  />
-</div>
-
-{/* FRASE BÍBLICA */}
-<div
-  className="relative flex justify-center px-6"
-  style={{
-    backgroundColor: "#DDDBD7",
-  }}
->
-  <div
-    className="relative -mt-20 md:-mt-24 max-w-4xl w-full rounded-3xl px-8 py-12 text-center"
-    style={{
-      backgroundColor: "#DDDBD7",
-      border: "1px solid #AEA38E",
-      boxShadow: "0 20px 60px rgba(89,59,31,0.12)",
-    }}
-  >
-    {/* Ornamento */}
-    <p
-      className="text-4xl mb-6"
-      style={{
-        color: "#AEA38E",
-        fontFamily: "Cormorant Garamond",
-      }}
-    >
-      ❦
-    </p>
-
-    {/* Frase */}
-    <p
-      className="text-2xl md:text-4xl leading-relaxed"
-      style={{
-        color: "#53583E",
-        fontFamily: "Cormorant Garamond",
-      }}
-    >
-      “Y sobre todas estas virtudes,
-      vístanse de amor,
-      que es el vínculo perfecto.”
-    </p>
-
-    {/* Separador */}
-    <div
-      className="w-24 h-[1px] mx-auto my-8"
-      style={{
-        backgroundColor: "#AEA38E",
-      }}
-    />
-
-    {/* Referencia */}
-    <p
-      className="uppercase tracking-[4px] text-sm"
-      style={{
-        color: "#593B1F",
-      }}
-    >
-      Colosenses 3:14
-    </p>
-  </div>
-</div>
 
 {/* Ubicacion ceremonia */}
 <div
@@ -374,6 +293,87 @@ de nuestro matrimonio.
     </div>
   </div>
 
+      {/* Frase de separacion */}
+             <div
+        className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden"
+      >
+        <img
+          src="./image1.jpeg"
+          alt="Novios"
+          className="w-full h-full object-cover object-[center_35%]"
+        />
+      
+        {/* Oscurecimiento elegante */}
+        <div className="absolute inset-0 bg-black/10" />
+      
+        {/* Fade inferior */}
+        <div
+          className="absolute bottom-0 left-0 w-full h-40"
+          style={{
+            background:
+              "linear-gradient(to top, #DDDBD7 0%, transparent 100%)",
+          }}
+        />
+      </div>
+      
+      {/* FRASE BÍBLICA */}
+      <div
+        className="relative flex justify-center px-6"
+        style={{
+          backgroundColor: "#DDDBD7",
+        }}
+      >
+        <div
+          className="relative -mt-20 md:-mt-24 max-w-4xl w-full rounded-3xl px-8 py-12 text-center"
+          style={{
+            backgroundColor: "#DDDBD7",
+            border: "1px solid #AEA38E",
+            boxShadow: "0 20px 60px rgba(89,59,31,0.12)",
+          }}
+        >
+          {/* Ornamento */}
+          <p
+            className="text-4xl mb-6"
+            style={{
+              color: "#AEA38E",
+              fontFamily: "Cormorant Garamond",
+            }}
+          >
+            ❦
+          </p>
+      
+          {/* Frase */}
+          <p
+            className="text-2xl md:text-4xl leading-relaxed"
+            style={{
+              color: "#53583E",
+              fontFamily: "Cormorant Garamond",
+            }}
+          >
+            “Y sobre todas estas virtudes,
+            vístanse de amor,
+            que es el vínculo perfecto.”
+          </p>
+      
+          {/* Separador */}
+          <div
+            className="w-24 h-[1px] mx-auto my-8"
+            style={{
+              backgroundColor: "#AEA38E",
+            }}
+          />
+      
+          {/* Referencia */}
+          <p
+            className="uppercase tracking-[4px] text-sm"
+            style={{
+              color: "#593B1F",
+            }}
+          >
+            Colosenses 3:14
+          </p>
+        </div>
+      </div>
 {/* SECCIÓN VESTIMENTA */}
       <Novios />
 
