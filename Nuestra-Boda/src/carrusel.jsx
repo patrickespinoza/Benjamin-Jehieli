@@ -6,7 +6,6 @@ const Carousel = () => {
   
   // Lista de imágenes para el carrusel
   const images = [
-    '/Carrusel01.jpeg', 
     '/Carrusel02.jpeg',
     '/Carrusel03.png', 
     '/Carrusel04.jpeg',
