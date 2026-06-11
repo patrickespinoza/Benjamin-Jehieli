@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Carousel from "./carrusel";
 import Countdown from "./componentes-encabezado/encabeza-cuenta";
 import { motion, AnimatePresence } from "framer-motion";
 import Novios from "./componentes-encabezado/novios-info";
-import React, { useState, useRef, useEffect } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX } from "lucide-react";;
 
 export default function Intinerario() {
   const audioRef = useRef(null);
@@ -88,8 +87,11 @@ ${mensajeInvitado || "Sin mensaje"}
 };
 const activarMusica = () => {
   if (audioRef.current) {
-    audioRef.current.play();
     audioRef.current.volume = 0.4;
+
+    audioRef.current.play().catch((err) => {
+      console.log(err);
+    });
   }
 
   setMusicaActiva(true);
@@ -931,6 +933,9 @@ de nuestro matrimonio.
     >
       Enviar Confirmación
     </button>
+  </div>
+</div>
+</div>
     <button
   onClick={toggleMusica}
   className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl"
@@ -946,9 +951,6 @@ de nuestro matrimonio.
     <VolumeX size={22} />
   )}
 </button>
-  </div>
-</div>
-</div>
 </>
   );
 }
