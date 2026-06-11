@@ -516,28 +516,6 @@ de nuestro matrimonio.
       para ustedes.
     </p>
 
-    {/* Número evento */}
-    <div className="mt-10">
-      <p
-        className="uppercase tracking-[4px] text-xs mb-2"
-        style={{
-          color: "#AEA38E",
-        }}
-      >
-        Número de Evento
-      </p>
-
-      <h3
-        className="text-4xl"
-        style={{
-          color: "#53583E",
-          fontFamily: "Cormorant Garamond",
-        }}
-      >
-        51983315
-      </h3>
-    </div>
-
     {/* Botón */}
     <button
       onClick={() => setMostrarModal(true)}
