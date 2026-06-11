@@ -496,17 +496,6 @@ de nuestro matrimonio.
       }}
     />
 
-    {/* Icono */}
-    <img
-  src="/regalo2.png"
-  alt="Regalos"
-  className="h-20 w-20 mx-auto mb-8 opacity-80"
-  style={{
-    filter:
-      "sepia(25%) saturate(50%) hue-rotate(10deg) brightness(0.85)",
-  }}
-/>
-
     {/* Texto */}
     <p
       className="max-w-2xl mx-auto text-lg leading-relaxed"
