@@ -7,7 +7,7 @@ import Novios from "./componentes-encabezado/novios-info";
 
 export default function Intinerario() {
   // Estados para manejar el formulario
-  const[mostraModal, setMostrarModal] = useState(false)
+  const [mostrarModal, setMostrarModal] = useState(false);
   const [copiado, setCopiado] = useState(false);
   const copiarCuenta = () => {
   navigator.clipboard.writeText("1234 5678 9012 3456");
@@ -76,140 +76,479 @@ ${mensajeInvitado || "Sin mensaje"}
   return (
     <div >
 
-      <div className="relative flex flex-col items-center justify-center text-white bg-black py-20 px-6 text-center overflow-hidden">
+<div className="relative flex flex-col items-center justify-center bg-[#DDDBD7] py-24 px-6 text-center overflow-hidden">
 
-  {/* Glow decorativo sutil */}
-  <div className="absolute w-[500px] h-[500px] bg-[#9E8E7B]/20 rounded-full blur-3xl top-[-100px]"></div>
+  {/* Mancha decorativa elegante */}
+  <div className="absolute w-[600px] h-[600px] bg-[#AEA38E]/20 rounded-full blur-3xl top-[-200px]"></div>
 
   {/* Contenido */}
   <div className="relative z-10 max-w-3xl">
+  <p
+  className="text-3xl mb-4"
+  style={{
+    color: "#AEA38E",
+    fontFamily: "Cormorant Garamond",
+  }}
+>
+  ❦
+</p>
+    <p
+      className="uppercase tracking-[6px] text-sm mb-6"
+      style={{ color: "#AEA38E" }}
+    >
+      Nuestra Boda
+    </p>
 
-    <h1 className="text-3xl sm:text-5xl md:text-6xl font-cursiveDancing mb-6 leading-tight">
-      ¡Estás invitado!
+    <h1
+      className="text-4xl sm:text-6xl md:text-7xl mb-8 leading-tight"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      ¡Nos Casamos!
     </h1>
 
-    <p className="text-lg sm:text-2xl md:text-3xl opacity-90 mb-6">
-      Nos encantaría que seas parte de este momento tan especial para nosotros
+    <p
+      className="text-lg sm:text-2xl md:text-3xl leading-relaxed"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Con inmensa alegría en nuestros corazones,
+te invitamos a acompañarnos en la celebración
+de nuestro matrimonio.
     </p>
 
     {/* Línea elegante */}
-    <div className="w-20 h-[2px] bg-[#9E8E7B] mx-auto my-6"></div>
+    <div
+      className="w-24 h-[1px] mx-auto my-10"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
 
-    <p className="text-xl sm:text-3xl italic opacity-80">
-      ¡Falta poco!
+    <p
+      className="text-xl sm:text-2xl italic"
+      style={{
+        color: "#53583E",
+      }}
+    >
+      Falta muy poco para nuestro gran día
     </p>
 
   </div>
 </div>
 
-{/* COUNTDOWN separado pero integrado */}
-<div className="bg-black pb-20 flex justify-center">
-  <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl px-8 py-6 shadow-xl">
+{/* COUNTDOWN */}
+<div
+  className="pb-24 flex justify-center px-6"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  <div
+    className="rounded-3xl px-10 py-8 shadow-lg"
+    style={{
+      backgroundColor: "#53583E",
+      border: "1px solid #AEA38E",
+    }}
+  >
     <Countdown targetDate="2026-10-18T00:00:00" />
   </div>
 </div>
-        <div className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden">
 
+{/* Frase de separacion */}
+       <div
+  className="relative w-full h-[450px] md:h-[550px] lg:h-[700px] overflow-hidden"
+>
   <img
-    src="/Novios-02.jpeg"
-    alt="Decoración"
-    className="w-full h-full object-cover object-center"
+    src="/Carrusel01.jpeg"
+    alt="Novios"
+    className="w-full h-full object-cover object-[center_35%]"
   />
 
-  {/* Fade blanco abajo */}
-  <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
+  {/* Oscurecimiento elegante */}
+  <div className="absolute inset-0 bg-black/10" />
 
+  {/* Fade inferior */}
+  <div
+    className="absolute bottom-0 left-0 w-full h-40"
+    style={{
+      background:
+        "linear-gradient(to top, #DDDBD7 0%, transparent 100%)",
+    }}
+  />
 </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  ">
-        <div className="flex items-center justify-center p-6">
-  <div className="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center space-y-4 hover:scale-105 transition duration-300">
-    
-    <h1 className="text-2xl sm:text-3xl font-bold font-playfair tracking-wide">
-      CEREMONI DE ACCION DE GRACIAS
-    </h1>
+{/* FRASE BÍBLICA */}
+<div
+  className="relative flex justify-center px-6"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  <div
+    className="relative -mt-20 md:-mt-24 max-w-4xl w-full rounded-3xl px-8 py-12 text-center"
+    style={{
+      backgroundColor: "#DDDBD7",
+      border: "1px solid #AEA38E",
+      boxShadow: "0 20px 60px rgba(89,59,31,0.12)",
+    }}
+  >
+    {/* Ornamento */}
+    <p
+      className="text-4xl mb-6"
+      style={{
+        color: "#AEA38E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      ❦
+    </p>
 
-    <div className="text-lg font-cursiveDancing space-y-1">
-      <p>📅 18 Octubre 2026</p>
-      <p>⏰ 1:00 PM</p>
-    </div>
+    {/* Frase */}
+    <p
+      className="text-2xl md:text-4xl leading-relaxed"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      “Y sobre todas estas virtudes,
+      vístanse de amor,
+      que es el vínculo perfecto.”
+    </p>
 
-    <div className="border-t border-gray-200 pt-4 space-y-2">
-      <p className="font-semibold text-lg">Ubicacion</p>
-      <p className="font-semibold text-lg">📍 Salón Quinta Cangrejos</p>
-      <p className="text-sm text-gray-600">
-        C.carril libertad 81 San Vicente Ferrer, 75718, Tehuácan, Pue
-      </p>
-    </div>
+    {/* Separador */}
+    <div
+      className="w-24 h-[1px] mx-auto my-8"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
 
+    {/* Referencia */}
+    <p
+      className="uppercase tracking-[4px] text-sm"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Colosenses 3:14
+    </p>
+  </div>
+</div>
+
+{/* Ubicacion ceremonia */}
+<div
+  className="flex items-center justify-center px-6 py-16"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  <div
+    className="max-w-xl w-full text-center rounded-3xl p-10 md:p-14"
+    style={{
+      backgroundColor: "#DDDBD7",
+      border: "1px solid #AEA38E",
+      boxShadow: "0 20px 60px rgba(89,59,31,0.10)",
+    }}
+  >
+
+    {/* Texto superior */}
+    <p
+      className="uppercase tracking-[5px] text-xs mb-4"
+      style={{
+        color: "#AEA38E",
+      }}
+    >
+      Celebración
+    </p>
+
+    {/* Título */}
+    <h2
+      className="text-3xl md:text-5xl mb-8"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+        fontWeight: "500",
+      }}
+    >
+      Ceremonia de Acción de Gracias
+    </h2>
+
+    {/* Línea */}
+    <div
+      className="w-24 h-[1px] mx-auto mb-8"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
+
+    {/* Fecha */}
+    <p
+      className="text-xl md:text-2xl mb-2"
+      style={{
+        color: "#593B1F",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      18 de Octubre de 2026
+    </p>
+
+    {/* Hora */}
+    <p
+      className="text-lg mb-10"
+      style={{
+        color: "#53583E",
+      }}
+    >
+      1:00 PM
+    </p>
+
+    {/* Ubicación */}
+    <p
+      className="uppercase tracking-[4px] text-xs mb-4"
+      style={{
+        color: "#AEA38E",
+      }}
+    >
+      Lugar
+    </p>
+
+    <h3
+      className="text-2xl mb-4"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      Salón Quinta Cangrejos
+    </h3>
+
+    <p
+      className="leading-relaxed max-w-sm mx-auto"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      C. Carril Libertad 81,
+      San Vicente Ferrer,
+      75718, Tehuacán, Puebla.
+    </p>
+
+    {/* Separador */}
+    <div
+      className="w-16 h-[1px] mx-auto my-10"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
+
+    {/* Botón */}
     <a
       href="https://maps.app.goo.gl/Yi5XS1J5hugvNDMM9"
       target="_blank"
-      className="inline-block mt-4 bg-[#9E8E7B] hover:bg-[#8a7a69] text-white px-6 py-3 rounded-full shadow-md transition duration-300"
+      rel="noopener noreferrer"
+      className="inline-block px-8 py-3 transition-all duration-300"
+      style={{
+        backgroundColor: "#53583E",
+        color: "#DDDBD7",
+        border: "1px solid #AEA38E",
+        letterSpacing: "2px",
+        textTransform: "uppercase",
+      }}
     >
-      Ver ubicación
+      Ver Ubicación
     </a>
+    </div>
   </div>
-</div>
 
 {/* SECCIÓN VESTIMENTA */}
       <Novios />
 
-        {/* Sección de Momentos */}
-        <div className="flex items-center justify-center py-12 bg-gray-50">
-  <div className="max-w-4xl w-full text-center space-y-6">
+{/* NUESTROS MOMENTOS */}
+<div
+  className="py-24 px-6"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  <div className="max-w-5xl mx-auto text-center">
 
-    {/* Título */}
-    <h1 className="text-2xl sm:text-4xl font-bold font-playfair tracking-wide">
-      Nuestros Momentos
-    </h1>
-
-    {/* Línea decorativa */}
-    <div className="w-20 h-[2px] bg-[#9E8E7B] mx-auto"></div>
-
-    {/* Subtexto */}
-    <p className="text-gray-500 text-sm sm:text-base">
-      Un vistazo a nuestra historia juntos 💛
+    {/* Texto superior */}
+    <p
+      className="uppercase tracking-[5px] text-xs mb-4"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Nuestra Historia
     </p>
 
-    {/* Carrusel dentro de card */}
-    <div className="bg-white rounded-3xl shadow-xl p-4 sm:p-6 flex justify-center">
-  <div className="w-full max-w-xl">
-    <Carousel />
-  </div>
-</div>
+    {/* Título */}
+    <h2
+      className="text-4xl md:text-6xl mb-8"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      Nuestros Momentos
+    </h2>
+
+    {/* Línea */}
+    <div
+      className="w-24 h-[1px] mx-auto mb-8"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
+
+    {/* Descripción */}
+    <p
+      className="max-w-2xl mx-auto text-lg leading-relaxed mb-12"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Cada fotografía guarda un recuerdo,
+      una sonrisa y una historia que nos ha traído
+      hasta este día tan especial.
+    </p>
+
+    {/* Carrusel */}
+    <div
+      className="rounded-3xl p-4 md:p-8"
+      style={{
+        backgroundColor: "#F3F1EE",
+        border: "1px solid #AEA38E",
+        boxShadow: "0 20px 60px rgba(89,59,31,0.08)",
+      }}
+    >
+      <div className="max-w-2xl mx-auto">
+        <Carousel />
+      </div>
+    </div>
 
   </div>
 </div>
 
-{/* Sección Mesa de Regalos */}
-<div className="flex flex-col items-center justify-center gap-5 h-96 md:h-80 lg:h-[700px]">
-
-  <img
-    className="h-24 w-24 sm:h-28 sm:w-28 p-3 opacity-90"
-    src="/regalo1.png"
-    alt="Regalos"
+{/* SECCIÓN MESA DE REGALOS */}
+<div
+  className="relative py-24 px-6 overflow-hidden"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  {/* Mancha decorativa */}
+  <div
+    className="absolute w-[500px] h-[500px] rounded-full blur-3xl opacity-20 top-0 left-1/2 -translate-x-1/2"
+    style={{
+      backgroundColor: "#AEA38E",
+    }}
   />
 
-  <h1 className="text-xl sm:text-2xl font-bold font-playfair tracking-[0.25em] text-[#3f3a35]">
-    MESA DE REGALOS
-  </h1>
-
-  <p className="text-center text-base sm:text-lg px-6 max-w-2xl leading-relaxed text-[#6b6258]">
-    Su presencia es el mejor regalo para nosotros.  
-    Si desean tener un detalle adicional, hemos creado una mesa de regalos en Liverpool para acompañarnos en esta nueva etapa.
-  </p>
-
-  <button
-    className="bg-[#9E8E7B] hover:bg-[#8a7a6a] transition rounded-xl px-8 py-3 w-80 sm:w-96 text-white text-lg tracking-wider shadow-md"
-    onClick={() => setMostrarModal(true)}
+  <div
+    className="relative max-w-4xl mx-auto text-center rounded-3xl px-8 py-14"
+    style={{
+      backgroundColor: "#DDDBD7",
+      border: "1px solid #AEA38E",
+      boxShadow: "0 20px 60px rgba(89,59,31,0.12)",
+    }}
   >
-    Ver Mesa de Regalos
-  </button>
+    {/* Texto superior */}
+    <p
+      className="uppercase tracking-[6px] text-xs mb-4"
+      style={{
+        color: "#AEA38E",
+      }}
+    >
+      Detalles
+    </p>
+
+    {/* Título */}
+    <h2
+      className="text-4xl md:text-6xl mb-8"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
+    >
+      Mesa de Regalos
+    </h2>
+
+    {/* Línea */}
+    <div
+      className="w-24 h-[1px] mx-auto mb-8"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
+
+    {/* Icono */}
+    <img
+      src="/regalo1.png"
+      alt="Regalos"
+      className="h-20 w-20 mx-auto mb-8 opacity-90"
+    />
+
+    {/* Texto */}
+    <p
+      className="max-w-2xl mx-auto text-lg leading-relaxed"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Su presencia será nuestro mejor regalo.
+      <br />
+      Si desean tener un detalle adicional para acompañarnos en esta
+      nueva etapa, hemos preparado una mesa de regalos especialmente
+      para ustedes.
+    </p>
+
+    {/* Número evento */}
+    <div className="mt-10">
+      <p
+        className="uppercase tracking-[4px] text-xs mb-2"
+        style={{
+          color: "#AEA38E",
+        }}
+      >
+        Número de Evento
+      </p>
+
+      <h3
+        className="text-4xl"
+        style={{
+          color: "#53583E",
+          fontFamily: "Cormorant Garamond",
+        }}
+      >
+        51983315
+      </h3>
+    </div>
+
+    {/* Botón */}
+    <button
+      onClick={() => setMostrarModal(true)}
+      className="mt-10 px-10 py-4 transition-all duration-300 hover:scale-105"
+      style={{
+        backgroundColor: "#53583E",
+        color: "#DDDBD7",
+        border: "1px solid #AEA38E",
+        letterSpacing: "2px",
+        textTransform: "uppercase",
+      }}
+    >
+      Ver Mesa de Regalos
+    </button>
+  </div>
 
   {/* MODAL */}
   <AnimatePresence>
-    {mostraModal && (
+    {mostrarModal && (
       <motion.div
         className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center z-50 px-4"
         onClick={() => setMostrarModal(false)}
@@ -218,72 +557,63 @@ ${mensajeInvitado || "Sin mensaje"}
         exit={{ opacity: 0 }}
       >
         <motion.div
-          className="relative w-full max-w-[380px] rounded-[28px] overflow-hidden shadow-2xl border border-white/20"
+          className="relative w-full max-w-[420px] rounded-3xl overflow-hidden"
           onClick={(e) => e.stopPropagation()}
-          initial={{ scale: 0.85, opacity: 0, y: 60 }}
-          animate={{ scale: 1, opacity: 1, y: 0 }}
-          exit={{ scale: 0.85, opacity: 0, y: 60 }}
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
           transition={{ duration: 0.4 }}
           style={{
-            background:
-              "linear-gradient(145deg, #fbf8f3 0%, #f1ece4 50%, #e4ddd2 100%)",
+            backgroundColor: "#DDDBD7",
+            border: "1px solid #AEA38E",
+            boxShadow: "0 20px 60px rgba(89,59,31,0.20)",
           }}
         >
-          {/* brillo elegante */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-40 animate-[shine_5s_infinite]" />
-
-          {/* barra dorada superior */}
-          <div className="h-1 w-full bg-gradient-to-r from-[#C6A76A] via-[#E6C98A] to-[#C6A76A]" />
-
-          {/* cerrar */}
           <button
-            className="absolute top-3 right-4 text-[#6b6258] text-xl"
+            className="absolute top-4 right-4 text-xl"
+            style={{
+              color: "#593B1F",
+            }}
             onClick={() => setMostrarModal(false)}
           >
             ✕
           </button>
 
-          <div className="p-7">
+          <div className="p-10 text-center">
 
-            {/* LOGO */}
-            <div className="flex justify-center">
-              <img
-                src="/liverpool.svg"
-                alt="Liverpool"
-                className="h-10 object-contain opacity-90"
-              />
-            </div>
+            <img
+              src="/liverpool.svg"
+              alt="Liverpool"
+              className="h-10 mx-auto mb-6"
+            />
 
-            {/* título */}
-            <div className="text-center mt-5">
-              <p className="text-[11px] tracking-[0.35em] text-[#8a7f72] uppercase">
-                Mesa de Regalos
-              </p>
 
-              <h2 className="text-3xl mt-2 font-playfair text-[#4b4036]">
-                Liverpool
-              </h2>
+            <div
+              className="w-20 h-[1px] mx-auto my-6"
+              style={{
+                backgroundColor: "#AEA38E",
+              }}
+            />
 
-              <div className="w-16 h-[1px] bg-[#C6A76A] mx-auto mt-3"></div>
-            </div>
-
-            {/* número */}
-            <div className="mt-7 text-center">
-              <p className="text-[11px] tracking-[0.3em] text-[#8a7f72] uppercase">
-                Evento
-              </p>
-
-              <p className="text-3xl tracking-[0.2em] text-[#3f3a35] font-light mt-1">
-                51983315
-              </p>
-            </div>
-
-            {/* novios */}
-            <p className="text-center text-xs tracking-[0.25em] text-[#7a6f63] mt-4">
-              VALERIA & ALEJANDRO
+            <p
+              className="uppercase tracking-[4px] text-xs"
+              style={{
+                color: "#AEA38E",
+              }}
+            >
+              Evento
             </p>
 
-            {/* botón */}
+            <h3
+              className="text-3xl mt-2"
+              style={{
+                color: "#593B1F",
+                fontFamily: "Cormorant Garamond",
+              }}
+            >
+              51983315
+            </h3>
+
             <button
               onClick={() =>
                 window.open(
@@ -291,11 +621,15 @@ ${mensajeInvitado || "Sin mensaje"}
                   "_blank"
                 )
               }
-              className="w-full mt-6 bg-[#6b5b4d] hover:bg-[#5a4c42] transition text-white py-3 rounded-xl tracking-wider shadow-md"
+              className="w-full mt-8 py-3"
+              style={{
+                backgroundColor: "#53583E",
+                color: "#DDDBD7",
+                border: "1px solid #AEA38E",
+              }}
             >
               Abrir Mesa de Regalos
             </button>
-
           </div>
         </motion.div>
       </motion.div>
@@ -317,7 +651,7 @@ ${mensajeInvitado || "Sin mensaje"}
   <div className="relative flex flex-col items-center">
 
     <img
-      src="/finalboda.webp"
+      src="/final.png"
       alt="Boda"
       className="w-72 sm:w-96 rounded-2xl shadow-2xl border border-white/20"
     />
@@ -332,79 +666,168 @@ ${mensajeInvitado || "Sin mensaje"}
 
   </div>
 </div>
-<div className="flex flex-col items-center justify-center gap-4 h-auto py-10 bg-gray-50 rounded-2xl shadow-md">
-  <h1 className="text-xl sm:text-2xl font-bold font-playfair">
-    CONFIRMAR ASISTENCIA
-  </h1>
+<div
+  className="py-24 px-6"
+  style={{
+    backgroundColor: "#DDDBD7",
+  }}
+>
+  <div
+    className="max-w-3xl mx-auto rounded-3xl px-8 py-14 text-center"
+    style={{
+      backgroundColor: "#DDDBD7",
+      border: "1px solid #AEA38E",
+      boxShadow: "0 20px 60px rgba(89,59,31,0.12)",
+    }}
+  >
 
-  <p>Por favor, confirma tu asistencia</p>
 
-  {/* Nombre */}
-  <input
-    type="text"
-    placeholder="Nombre y apellido"
-    value={nombreInvitado}
-    onChange={(e) => setNombreInvitado(e.target.value)}
-    className="w-80 p-3 border rounded-lg focus:ring-2 focus:ring-[#9E8E7B]"
-  />
-
-  {/* Asistencia */}
-  <div className="flex gap-4">
-    <button
-      onClick={() => setAsistencia("Sí asistiré")}
-      className={`px-4 py-2 rounded-lg border ${
-        asistencia === "Sí asistiré"
-          ? "bg-green-500 text-white"
-          : "bg-white"
-      }`}
+    {/* Encabezado */}
+    <p
+      className="uppercase tracking-[6px] text-xs mb-4"
+      style={{
+        color: "#AEA38E",
+      }}
     >
-      ✅ Asistiré
-    </button>
+      RSVP
+    </p>
 
-    <button
-      onClick={() => setAsistencia("No podré asistir")}
-      className={`px-4 py-2 rounded-lg border ${
-        asistencia === "No podré asistir"
-          ? "bg-red-500 text-white"
-          : "bg-white"
-      }`}
+    <h1
+      className="text-4xl md:text-5xl mb-6"
+      style={{
+        color: "#53583E",
+        fontFamily: "Cormorant Garamond",
+      }}
     >
-      ❌ No asistiré
+      Confirmar Asistencia
+    </h1>
+
+    <div
+      className="w-24 h-[1px] mx-auto mb-8"
+      style={{
+        backgroundColor: "#AEA38E",
+      }}
+    />
+
+    <p
+      className="mb-10 text-lg"
+      style={{
+        color: "#593B1F",
+      }}
+    >
+      Nos encantaría compartir este momento contigo.
+    </p>
+
+    {/* Nombre */}
+    <input
+      type="text"
+      placeholder="Nombre y Apellido"
+      value={nombreInvitado}
+      onChange={(e) => setNombreInvitado(e.target.value)}
+      className="w-full max-w-md p-4 rounded-xl mb-6 outline-none"
+      style={{
+        border: "1px solid #AEA38E",
+        backgroundColor: "#F7F5F2",
+        color: "#53583E",
+      }}
+    />
+
+    {/* Asistencia */}
+    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+      <button
+        onClick={() => setAsistencia("Sí asistiré")}
+        className="px-8 py-3 rounded-xl transition-all duration-300"
+        style={{
+          backgroundColor:
+            asistencia === "Sí asistiré"
+              ? "#53583E"
+              : "#F7F5F2",
+          color:
+            asistencia === "Sí asistiré"
+              ? "#DDDBD7"
+              : "#53583E",
+          border: "1px solid #AEA38E",
+        }}
+      >
+        ✓ Confirmo mi asistencia
+      </button>
+
+      <button
+        onClick={() => setAsistencia("No podré asistir")}
+        className="px-8 py-3 rounded-xl transition-all duration-300"
+        style={{
+          backgroundColor:
+            asistencia === "No podré asistir"
+              ? "#593B1F"
+              : "#F7F5F2",
+          color:
+            asistencia === "No podré asistir"
+              ? "#DDDBD7"
+              : "#593B1F",
+          border: "1px solid #AEA38E",
+        }}
+      >
+        ✕ No podré asistir
+      </button>
+    </div>
+
+    {/* Invitados */}
+    <input
+      type="number"
+      min="1"
+      value={invitados}
+      onChange={(e) => setInvitados(Number(e.target.value))}
+      placeholder="Número de invitados"
+      className="w-full max-w-md p-4 rounded-xl mb-6 outline-none text-center"
+      style={{
+        border: "1px solid #AEA38E",
+        backgroundColor: "#F7F5F2",
+        color: "#53583E",
+      }}
+    />
+
+    {/* Mensaje */}
+    <textarea
+      placeholder="Dedica unas palabras a los novios (opcional)"
+      value={mensajeInvitado}
+      onChange={(e) => setMensajeInvitado(e.target.value)}
+      rows={4}
+      className="w-full max-w-md p-4 rounded-xl mb-6 outline-none"
+      style={{
+        border: "1px solid #AEA38E",
+        backgroundColor: "#F7F5F2",
+        color: "#53583E",
+      }}
+    />
+
+    {/* Error */}
+    {error && (
+      <p
+        className="mb-6"
+        style={{
+          color: "#B04A4A",
+        }}
+      >
+        {error}
+      </p>
+    )}
+
+    {/* Botón */}
+    <button
+      onClick={enviarConfirmacion}
+      className="px-10 py-4 transition-all duration-300 hover:scale-105 rounded-xl"
+      style={{
+        backgroundColor: "#53583E",
+        color: "#DDDBD7",
+        border: "1px solid #AEA38E",
+        letterSpacing: "2px",
+        textTransform: "uppercase",
+      }}
+    >
+      Enviar Confirmación
     </button>
   </div>
-
-  {/* Número de invitados */}
-  <input
-    type="number"
-    min="1"
-    value={invitados}
-    onChange={(e) => setInvitados(e.target.value)}
-    className="w-80 p-3 border rounded-lg text-center"
-  />
-
-  {/* Mensaje */}
-  <textarea
-    placeholder="Mensaje para los novios (opcional)"
-    value={mensajeInvitado}
-    onChange={(e) => setMensajeInvitado(e.target.value)}
-    className="w-80 p-3 border rounded-lg"
-  />
-
-  {/* Error */}
-  {error && (
-    <p className="text-red-500 text-sm">{error}</p>
-  )}
-
-  {/* Botón */}
-  <button
-  onClick={enviarConfirmacion}
-  className="bg-[#9E8E7B] hover:bg-[#8a7a69] text-white px-6 py-3 rounded-full shadow-lg transition duration-300"
->
-  Enviar Confirmación
-</button>
 </div>
-
-      </div>      
-    </div>
+</div>
   );
 }
