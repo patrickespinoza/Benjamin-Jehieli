@@ -3,9 +3,14 @@ import Carousel from "./carrusel";
 import Countdown from "./componentes-encabezado/encabeza-cuenta";
 import { motion, AnimatePresence } from "framer-motion";
 import Novios from "./componentes-encabezado/novios-info";
-
+import React, { useState, useRef, useEffect } from "react";
+import { Volume2, VolumeX } from "lucide-react";
 
 export default function Intinerario() {
+  const audioRef = useRef(null);
+
+const [mostrarMusica, setMostrarMusica] = useState(true);
+const [musicaActiva, setMusicaActiva] = useState(false);
   // Estados para manejar el formulario
   const [enviando, setEnviando] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
@@ -81,8 +86,123 @@ ${mensajeInvitado || "Sin mensaje"}
     setEnviando(false);
   }
 };
+const activarMusica = () => {
+  if (audioRef.current) {
+    audioRef.current.play();
+    audioRef.current.volume = 0.4;
+  }
+
+  setMusicaActiva(true);
+  setMostrarMusica(false);
+};
+
+const silenciarMusica = () => {
+  if (audioRef.current) {
+    audioRef.current.pause();
+  }
+
+  setMusicaActiva(false);
+  setMostrarMusica(false);
+};
+
+const toggleMusica = () => {
+  if (!audioRef.current) return;
+
+  if (musicaActiva) {
+    audioRef.current.pause();
+    setMusicaActiva(false);
+  } else {
+    audioRef.current.play();
+    setMusicaActiva(true);
+  }
+};
 
 return (
+  <>
+  <audio
+    ref={audioRef}
+    loop
+  >
+    <source src="/musica.mp3" type="audio/mpeg" />
+  </audio>
+  <AnimatePresence>
+  {mostrarMusica && (
+    <motion.div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-md px-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.9, opacity: 0 }}
+        className="max-w-md w-full rounded-3xl p-8 text-center"
+        style={{
+          backgroundColor: "#DDDBD7",
+          border: "1px solid #AEA38E",
+          boxShadow: "0 20px 60px rgba(89,59,31,0.20)",
+        }}
+      >
+        <p
+          className="text-4xl mb-4"
+          style={{
+            color: "#AEA38E",
+            fontFamily: "Cormorant Garamond",
+          }}
+        >
+          ❦
+        </p>
+
+        <h2
+          className="text-3xl mb-4"
+          style={{
+            color: "#53583E",
+            fontFamily: "Cormorant Garamond",
+          }}
+        >
+          Bienvenidos
+        </h2>
+
+        <p
+          className="leading-relaxed mb-8"
+          style={{
+            color: "#593B1F",
+          }}
+        >
+          Esta invitación contiene música.
+          <br />
+          Te recomendamos activar el sonido para disfrutar una experiencia más especial.
+        </p>
+
+        <div className="flex flex-col gap-4">
+          <button
+            onClick={activarMusica}
+            className="py-3 rounded-xl transition-all hover:scale-105"
+            style={{
+              backgroundColor: "#53583E",
+              color: "#DDDBD7",
+            }}
+          >
+            Activar Música
+          </button>
+
+          <button
+            onClick={silenciarMusica}
+            className="py-3 rounded-xl"
+            style={{
+              border: "1px solid #AEA38E",
+              color: "#593B1F",
+            }}
+          >
+            Continuar sin música
+          </button>
+        </div>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+  
     <div >
 
 <div className="relative flex flex-col items-center justify-center bg-[#DDDBD7] py-24 px-6 text-center overflow-hidden">
@@ -422,7 +542,7 @@ de nuestro matrimonio.
         color: "#593B1F",
       }}
     >
-      "Asi que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre."
+      "así que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre."
     </p>
     <p
       className="max-w-2xl mx-auto text-lg leading-relaxed mb-12"
@@ -646,7 +766,7 @@ de nuestro matrimonio.
     <div className="w-24 h-[2px] bg-[#9E8E7B] mt-6"></div>
 
     {/* Texto opcional elegante */}
-    <p className="text-white mt-4 text-lg font-cursiveDancing opacity-90">
+    <p className="text-white mt-4 text-4xl font-cursiveDancing opacity-90">
       ¡Te esperamos!
     </p>
 
@@ -763,7 +883,6 @@ de nuestro matrimonio.
   min="1"
   value={invitados}
   onChange={(e) => setInvitados(e.target.value)}
-  placeholder="Número de invitados"
   className="w-full max-w-md p-4 rounded-xl mb-6 outline-none text-center"
   style={{
     border: "1px solid #AEA38E",
@@ -812,8 +931,24 @@ de nuestro matrimonio.
     >
       Enviar Confirmación
     </button>
+    <button
+  onClick={toggleMusica}
+  className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-xl"
+  style={{
+    backgroundColor: "#53583E",
+    color: "#DDDBD7",
+    border: "1px solid #AEA38E",
+  }}
+>
+  {musicaActiva ? (
+    <Volume2 size={22} />
+  ) : (
+    <VolumeX size={22} />
+  )}
+</button>
   </div>
 </div>
 </div>
+</>
   );
 }

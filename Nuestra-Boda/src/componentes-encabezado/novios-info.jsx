@@ -119,21 +119,6 @@ const Novios = () => {
           }}
         />
 
-        {/* Texto */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-10 text-xl sm:text-2xl leading-relaxed relative z-10"
-          style={{
-            color: "#593B1F",
-            fontFamily: "Cormorant Garamond",
-          }}
-        >
-          Con la bendición de nuestros padres
-        </motion.p>
-
         {/* Padres */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-14">
           
@@ -221,15 +206,15 @@ const Novios = () => {
             />
 
             <p
-              className="text-2xl"
-              style={{
-                color: "#53583E",
-                fontFamily: "Cormorant Garamond",
-                fontWeight: "600",
-              }}
-            >
-              Jesús Santiago López Cardoso
-            </p>
+  className="text-2xl"
+  style={{
+    color: "#53583E",
+    fontFamily: "Cormorant Garamond",
+    fontWeight: "600",
+  }}
+>
+  † Jesús Santiago López Cardoso
+</p>
 
             <p
               className="mt-3 text-2xl"
