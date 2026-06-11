@@ -31,7 +31,7 @@ export default function Portada() {
   <img
     src="/portada.jpeg"
     alt="Fondo"
-    className="absolute w-full h-full object-cover"
+    className="absolute w-full h-full object-cover object-[center_40%]"
   />
 
   {/* OVERLAY OSCURO */}

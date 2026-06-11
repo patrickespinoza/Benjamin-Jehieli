@@ -7,6 +7,7 @@ import Novios from "./componentes-encabezado/novios-info";
 
 export default function Intinerario() {
   // Estados para manejar el formulario
+  const [enviando, setEnviando] = useState(false);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [copiado, setCopiado] = useState(false);
   const copiarCuenta = () => {
@@ -20,31 +21,35 @@ export default function Intinerario() {
   const [nombreInvitado, setNombreInvitado] = useState("");
   const [mensajeInvitado, setMensajeInvitado] = useState("");
   const [asistencia, setAsistencia] = useState("");
-  const [invitados, setInvitados] = useState(1);
+  const [invitados, setInvitados] = useState("");
   const [error, setError] = useState("");
-  const enviarConfirmacion = async () => {
+const enviarConfirmacion = async () => {
+  if (enviando) return;
+
   if (!nombreInvitado || !asistencia) {
     setError("Completa tu nombre y confirma asistencia");
     return;
   }
 
+  setEnviando(true);
   setError("");
 
   const data = {
     nombre: nombreInvitado,
     asistencia,
-    invitados,
+    invitados: invitados || 1,
     mensaje: mensajeInvitado,
   };
 
   try {
-    // 🔥 GUARDAR EN GOOGLE SHEETS
-    await fetch("https://script.google.com/macros/s/AKfycbybAXwN1Vd27tQTf-UfjUQMBoPWFEaS_vuHnSsR2qR-Pc1tMBxH7TrC00LwGbwh4Mnnrw/exec", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbybAXwN1Vd27tQTf-UfjUQMBoPWFEaS_vuHnSsR2qR-Pc1tMBxH7TrC00LwGbwh4Mnnrw/exec",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+      }
+    );
 
-    // 📱 WHATSAPP
     const numero = "522381507457";
 
     const mensaje = `✨ Confirmación de asistencia ✨
@@ -58,22 +63,26 @@ ${mensajeInvitado || "Sin mensaje"}
 
 ¡Nos vemos en la boda! 💍🎉`;
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(
+      mensaje
+    )}`;
+
     window.open(url, "_blank");
 
-    // 🧹 RESET
     setNombreInvitado("");
     setMensajeInvitado("");
     setAsistencia("");
-    setInvitados(1);
+    setInvitados("");
 
   } catch (error) {
     console.error("Error:", error);
     setError("Hubo un error al enviar");
+  } finally {
+    setEnviando(false);
   }
 };
 
-  return (
+return (
     <div >
 
 <div className="relative flex flex-col items-center justify-center bg-[#DDDBD7] py-24 px-6 text-center overflow-hidden">
@@ -489,10 +498,14 @@ de nuestro matrimonio.
 
     {/* Icono */}
     <img
-      src="/regalo1.png"
-      alt="Regalos"
-      className="h-20 w-20 mx-auto mb-8 opacity-90"
-    />
+  src="/regalo2.png"
+  alt="Regalos"
+  className="h-20 w-20 mx-auto mb-8 opacity-80"
+  style={{
+    filter:
+      "sepia(25%) saturate(50%) hue-rotate(10deg) brightness(0.85)",
+  }}
+/>
 
     {/* Texto */}
     <p
@@ -733,58 +746,58 @@ de nuestro matrimonio.
     />
 
     {/* Asistencia */}
-    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-      <button
-        onClick={() => setAsistencia("Sí asistiré")}
-        className="px-8 py-3 rounded-xl transition-all duration-300"
-        style={{
-          backgroundColor:
-            asistencia === "Sí asistiré"
-              ? "#53583E"
-              : "#F7F5F2",
-          color:
-            asistencia === "Sí asistiré"
-              ? "#DDDBD7"
-              : "#53583E",
-          border: "1px solid #AEA38E",
-        }}
-      >
-        ✓ Confirmo mi asistencia
-      </button>
+<div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+  <button
+    onClick={() => setAsistencia("Sí asistiré")}
+    className="px-8 py-3 rounded-xl transition-all duration-300"
+    style={{
+      backgroundColor:
+        asistencia === "Sí asistiré"
+          ? "#53583E"
+          : "#F7F5F2",
+      color:
+        asistencia === "Sí asistiré"
+          ? "#DDDBD7"
+          : "#53583E",
+      border: "1px solid #AEA38E",
+    }}
+  >
+    ✓ Confirmo mi asistencia
+  </button>
 
-      <button
-        onClick={() => setAsistencia("No podré asistir")}
-        className="px-8 py-3 rounded-xl transition-all duration-300"
-        style={{
-          backgroundColor:
-            asistencia === "No podré asistir"
-              ? "#593B1F"
-              : "#F7F5F2",
-          color:
-            asistencia === "No podré asistir"
-              ? "#DDDBD7"
-              : "#593B1F",
-          border: "1px solid #AEA38E",
-        }}
-      >
-        ✕ No podré asistir
-      </button>
-    </div>
+  <button
+    onClick={() => setAsistencia("No podré asistir")}
+    className="px-8 py-3 rounded-xl transition-all duration-300"
+    style={{
+      backgroundColor:
+        asistencia === "No podré asistir"
+          ? "#593B1F"
+          : "#F7F5F2",
+      color:
+        asistencia === "No podré asistir"
+          ? "#DDDBD7"
+          : "#593B1F",
+      border: "1px solid #AEA38E",
+    }}
+  >
+    ✕ No podré asistir
+  </button>
+</div>
 
     {/* Invitados */}
     <input
-      type="number"
-      min="1"
-      value={invitados}
-      onChange={(e) => setInvitados(Number(e.target.value))}
-      placeholder="Número de invitados"
-      className="w-full max-w-md p-4 rounded-xl mb-6 outline-none text-center"
-      style={{
-        border: "1px solid #AEA38E",
-        backgroundColor: "#F7F5F2",
-        color: "#53583E",
-      }}
-    />
+  type="number"
+  min="1"
+  value={invitados}
+  onChange={(e) => setInvitados(e.target.value)}
+  placeholder="Número de invitados"
+  className="w-full max-w-md p-4 rounded-xl mb-6 outline-none text-center"
+  style={{
+    border: "1px solid #AEA38E",
+    backgroundColor: "#F7F5F2",
+    color: "#53583E",
+  }}
+/>
 
     {/* Mensaje */}
     <textarea
