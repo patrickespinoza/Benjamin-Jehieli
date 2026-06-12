@@ -544,7 +544,7 @@ de nuestro matrimonio.
         color: "#593B1F",
       }}
     >
-      "así que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre."
+      "Así que no son ya más dos, sino una sola carne; por tanto, lo que Dios juntó, no lo separe el hombre."
     </p>
     <p
       className="max-w-2xl mx-auto text-lg leading-relaxed mb-12"
@@ -878,20 +878,6 @@ de nuestro matrimonio.
     ✕ No podré asistir
   </button>
 </div>
-
-    {/* Invitados */}
-    <input
-  type="number"
-  min="1"
-  value={invitados}
-  onChange={(e) => setInvitados(e.target.value)}
-  className="w-full max-w-md p-4 rounded-xl mb-6 outline-none text-center"
-  style={{
-    border: "1px solid #AEA38E",
-    backgroundColor: "#F7F5F2",
-    color: "#53583E",
-  }}
-/>
 
     {/* Mensaje */}
     <textarea
